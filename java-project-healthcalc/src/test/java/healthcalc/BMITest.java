@@ -9,7 +9,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import healthcalc.exceptions.InvalidHealthDataException;
@@ -220,49 +219,6 @@ public class BMITest {
             assertThrows(InvalidHealthDataException.class, () -> healthCalc.bmiClassification(bmi));
         }
 
-        /* Test adicionales para mostrar que se pueden definir de otra forma. */
-
-        @Test
-        @DisplayName("Clasificación correcta para sobrepeso (Overweight)")
-        void testBmiOverweight() throws InvalidHealthDataException {
-            double bmiLimiteInferior = 25.0;
-            double bmiMedio = 27.5;
-            double bmiLimiteSuperior = 29.99;
-
-            String resultInferior = healthCalc.bmiClassification(bmiLimiteInferior);
-            String resultMedio = healthCalc.bmiClassification(bmiMedio);
-            String resultSuperior = healthCalc.bmiClassification(bmiLimiteSuperior);
-
-            assertAll(
-                () -> assertEquals("Overweight", resultInferior),
-                () -> assertEquals("Overweight", resultMedio),
-                () -> assertEquals("Overweight", resultSuperior)
-            );
-        }
-
-        @ParameterizedTest(name = "BMI {0} debe ser clasificado como {1}")
-        @CsvSource({
-            "15.99, Severe thinness",
-            "16.00, Moderate thinness",
-            "16.99, Moderate thinness",
-            "17.00, Mild thinness",
-            "18.49, Mild thinness",
-            "18.50, Normal",
-            "24.99, Normal",
-            "25.00, Overweight",
-            "29.99, Overweight",
-            "30.00, Obese class I",
-            "34.99, Obese class I",
-            "35.00, Obese class II",
-            "39.99, Obese class II",
-            "40.00, Obese class III"
-        })
-        @DisplayName("Clasificación de BMI en los límites exactos de cada categoría")
-        void testBmiClassificationLimites(double bmi, String expectedCategory) throws InvalidHealthDataException {
-            String result = healthCalc.bmiClassification(bmi);
-
-            assertEquals(expectedCategory, result);
-        }
     }
 
 }
