@@ -265,6 +265,24 @@ Para garantizar que la calculadora sea fiable y segura, se han definido los sigu
 
 </details>
 
+<details>
+<summary><b>Pruebas de Cálculo del Índice de Adiposidad Visceral (VAI)</b></summary>
+
+* **Cálculo correcto según el sexo del paciente:** Se comprueba que el sistema utiliza la fórmula correcta para cada sexo y devuelve el valor esperado con entradas dentro de rangos normales.
+
+* **Pruebas con valores representativos (interior de rango):** Se prueban varios conjuntos de datos tanto razonables como extremos válidos para asegurar que el valor calculado es el que se pretende obtener.
+
+* **Protección ante errores de escritura:**
+    * El sistema debe rechazar **circunferencia de cintura (CC) menor o igual que 0**.
+    * El sistema debe rechazar valores de **BMI menor o iguales a 0**.
+    * El sistema debe rechazar cualquier valor de **TG menor o igual que 0** .
+    * El sistema debe rechazar valores de **HDL menores o iguales a 0** .
+    * El sistema debe rechazar valores **extremadamente altos** para las entradas (por ejemplo, BMI > 150), ya que no tienen sentido a nivel clínico.
+    * El sistema debe rechazar caracteres de **sexo no válidos** (la entrada debe restringirse a los que hemos definido, se le indicarán expresamente al usuario).
+
+
+</details>
+
 
 ## Instalación y ejecución
 
