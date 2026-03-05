@@ -65,4 +65,42 @@ public interface HealthCalc {
  * @throws InvalidHealthDataException if parameters are invalid
  */
 public double vai(String sex, double bmi, double cc, double tg, double hdl) throws InvalidHealthDataException;
+
+    /**
+     * Estimate the ideal body weight (IBW) for a person based on height and sex.
+     *
+     * Implementation uses the Lorentz formula which works directly with height in
+     * centimetres and is straightforward for clinicians:
+     *
+     * <pre>
+     *  Male   : IBW = (height_cm - 100) - (height_cm - 150)/4
+     *  Female : IBW = (height_cm - 100) - (height_cm - 150)/2
+     * </pre>
+     *
+     * @param heightCm Height in centimetres. Must be within sensible human limits.
+     * @param sex      "m" or "f" (case‑sensitive) for male/female.
+     * @return         The ideal weight in kilograms.
+     * @throws InvalidHealthDataException when any argument is out of range.
+     */
+    public double idealWeight(double heightCm, String sex) throws InvalidHealthDataException;
+
+    /**
+     * Calculate the basal metabolic rate (BMR) using a common clinical formula.
+     *
+     * This implementation opts for the Mifflin‑St Jeor equation, which is widely
+     * used today:
+     *
+     * <pre>
+     *  BMR(male)   = (10 × weight_kg) + (6.25 × height_cm) - (5 × age) + 5
+     *  BMR(female) = (10 × weight_kg) + (6.25 × height_cm) - (5 × age) - 161
+     * </pre>
+     *
+     * @param weightKg  Current weight in kilograms (soft/hard limits enforced).
+     * @param heightCm  Height in centimetres.
+     * @param ageYears  Age in years (positive integer, reasonable upper bound).
+     * @param sex       "m" or "f" for male/female.
+     * @return          Estimated BMR in kilocalories/day.
+     * @throws InvalidHealthDataException when parameters are invalid.
+     */
+    public double basalMetabolicRate(double weightKg, double heightCm, int ageYears, String sex) throws InvalidHealthDataException;
 }
