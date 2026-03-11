@@ -372,4 +372,18 @@ Se han ejecutado un total de 73 tests exitosamente, cubriendo las métricas de B
 Se ha logrado una cobertura de código del 100%, tal como se muestra en el informe generado por Jacoco:
 ![Informe de cobertura al 100%](resources/p1/cobertura.png)
 
-</details>
+## Especificación
+
+### Casos de uso
+
+A continuación se presenta el diagrama de Casos de Uso del sistema HealthCalc. Se destacan en un color los casos de uso ya implementados en la Práctica 1 y en otro color el resto de funcionalidades no implementadas.
+
+![Diagrama de Casos de Uso](./doc/HealthCalc.jpg)
+
+#### Especificaciones detalladas
+
+Puede consultar el detalle de los casos de uso implementados en los siguientes enlaces:
+
+* [Caso de Uso: Calcular IMC (CU-01)](./doc/CU-01.txt)
+* [Caso de Uso: Calcular IBW (CU-02)](./doc/CU-02.txt)
+* [Caso de Uso: Calcular VAI (CU-03)](./doc/CU-03.txt)
