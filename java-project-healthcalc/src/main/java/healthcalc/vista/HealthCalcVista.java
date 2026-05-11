@@ -1,5 +1,6 @@
 package healthcalc.vista;
 
+import healthcalc.vista.HealthCalcView;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -26,7 +27,7 @@ import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.FormSpecs;
 import com.jgoodies.forms.layout.RowSpec;
 
-public class HealthCalcVista extends JFrame {
+public class HealthCalcVista extends JFrame implements HealthCalcView {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -64,19 +65,7 @@ public class HealthCalcVista extends JFrame {
 	private JLabel lblNewLabel;
 	private JButton btnCalcularIBW;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					HealthCalcVista frame = new HealthCalcVista();
-					new healthcalc.controller.HealthCalcController(frame);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	public HealthCalcVista() {
 		setTitle("HealthCalc");
