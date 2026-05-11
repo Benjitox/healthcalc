@@ -3,6 +3,7 @@ package healthcalc;
 import java.awt.EventQueue;
 
 import healthcalc.controller.HealthCalcController;
+import healthcalc.vista.HealthCalcView;
 import healthcalc.vista.HealthCalcVista;
 
 public class MainGUI {
