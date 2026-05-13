@@ -522,3 +522,22 @@ A continuación se muestran las capturas de la ejecución exitosa de todos los t
 
 **4. Resumen final (Build Success):**
 ![Resumen de ejecución](doc/P3/bdd_summary.png)
+
+
+## Patrones de diseño
+
+### Patrón Singleton
+
+Nos permite garantizar que solo hay una única instancia de la calculadora que sirve como acceso global.
+
+![Singleton](design_patterns/singleton.png)
+
+### Patrón Adapter
+
+Hemos creado un adaptador para poder tranajor con datos en las unidades especificadas por el hospital (y también el formato de respuesta esperado) sin tener que reimplementar nuestra calculadora al completo. Para la respuesta del BMI hemos incluido una clase que hace las veces de tupla, combinando el resultado numérico del cálculo y su clasificación asociada. Todo basandonos en el contrato proporcionado por el hospital.
+
+![Adapter](design_patterns/adapter.png)
+
+### Patrón Decorate
+
+### Patrón Strategy
