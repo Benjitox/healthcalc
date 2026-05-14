@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.Locale;
 import healthcalc.hospital.HealthHospital;
 import healthcalc.hospital.HealthHospitalAdapter;
+import healthcalc.hospital.HealthHospitalStatsDecorator;
 import healthcalc.hospital.ResultadoIMC;
 
 public class Main {
@@ -49,7 +50,6 @@ public class Main {
             double vai = healthCalc.vai(sex, bmi, cc, tg, hdl);
             double bmr = healthCalc.basalMetabolicRate(weight, heightCm, age, sex);
 
-            // Resultados:
             System.out.printf("1. IMC (BMI): %.2f kg/m2\n", bmi);
             System.out.println("   Clasificación: " + classification);
             System.out.printf("2. Peso Ideal (IBW - Lorentz): %.2f kg\n", ibw);
@@ -62,11 +62,36 @@ public class Main {
             HealthHospital hospitalCalc = new HealthHospitalAdapter();
 
             ResultadoIMC resultadoIMC = hospitalCalc.indiceMasaCorporal((float) heightMeters, (int) (weight * 1000));
-
             int pesoIdealHospital = hospitalCalc.pesoCorporalIdeal(sex.charAt(0), (float) heightMeters);
 
             System.out.println(resultadoIMC);
             System.out.println("Peso corporal ideal hospital: " + pesoIdealHospital + " kg");
+
+            System.out.println("================================");
+
+            System.out.println("\n=== Prueba Decorator HealthStats ===");
+
+            HealthHospital hospitalBase = new HealthHospitalAdapter();
+            HealthHospitalStatsDecorator hospitalConStats = new HealthHospitalStatsDecorator(hospitalBase);
+
+            ResultadoIMC resultadoStats = hospitalConStats.indiceMasaCorporal(
+                    (float) heightMeters,
+                    (int) (weight * 1000)
+            );
+
+            hospitalConStats.pesoCorporalIdeal(
+                    sex.charAt(0),
+                    (float) heightMeters
+            );
+
+            System.out.println(resultadoStats);
+
+            System.out.printf("Altura media: %.2f m\n", hospitalConStats.alturaMedia());
+            System.out.printf("Peso medio: %.2f kg\n", hospitalConStats.pesoMedio());
+            System.out.printf("IMC medio: %.2f\n", hospitalConStats.imcMedio());
+            System.out.println("Número de hombres: " + hospitalConStats.numSexoH());
+            System.out.println("Número de mujeres: " + hospitalConStats.numSexoM());
+            System.out.println("Número total de pacientes: " + hospitalConStats.numTotalPacientes());
 
             System.out.println("================================");
 
