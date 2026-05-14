@@ -534,10 +534,16 @@ Nos permite garantizar que solo hay una única instancia de la calculadora que s
 
 ### Patrón Adapter
 
-Hemos creado un adaptador para poder tranajor con datos en las unidades especificadas por el hospital (y también el formato de respuesta esperado) sin tener que reimplementar nuestra calculadora al completo. Para la respuesta del BMI hemos incluido una clase que hace las veces de tupla, combinando el resultado numérico del cálculo y su clasificación asociada. Todo basandonos en el contrato proporcionado por el hospital.
+Hemos creado un adaptador para poder trabajar con datos en las unidades especificadas por el hospital (y también el formato de respuesta esperado) sin tener que reimplementar nuestra calculadora al completo. Para la respuesta del BMI hemos incluido una clase que hace las veces de tupla, combinando el resultado numérico del cálculo y su clasificación asociada. Todo basandonos en el contrato proporcionado por el hospital.
 
 ![Adapter](design_patterns/adapter.png)
 
-### Patrón Decorate
+### Patrón Decorator
+
+El patrón Decorator permite agregar funcionalidades adicionales a objetos en tiempo de ejecución de manera dinámica, sin modificar su estructura original. En nuestro caso, hemos implementado `HealthHospitalStatsDecorator` para añadir la capacidad de recopilar estadísticas sobre los pacientes (altura media, peso media, IMC medio, etc.) mientras se mantienen todas las funcionalidades del adaptador original.
+
+La clase `HealthHospitalStatsDecorator` envuelve una instancia de `HealthHospital` y registra las estadísticas cada vez que se invoca un método, proporcionando una interfaz adicional `HealthStats` que expone métodos para acceder a estas métricas agregadas.
+
+![Decorator](design_patterns/decorator.png)
 
 ### Patrón Strategy
