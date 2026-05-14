@@ -12,7 +12,7 @@ import io.cucumber.java.es.Entonces;
 
 public class BMISteps {
 
-    private HealthCalc healthCalc = new HealthCalcImpl();
+    private HealthCalc healthCalc = HealthCalcImpl.getInstance();
     private double peso;
     private double altura;
     private double bmiInput;
