@@ -22,7 +22,7 @@ public class VAISteps {
 
 @Dado("que la calculadora de salud esta operativa")
 public void que_la_calculadora_de_salud_esta_operativa() {
-    healthCalc = new healthcalc.HealthCalcImpl();
+    healthCalc = healthcalc.HealthCalcImpl.getInstance();
     cc=0;
     tg=0;
     hdl=0;

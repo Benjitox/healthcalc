@@ -18,7 +18,7 @@ import healthcalc.exceptions.InvalidHealthDataException;
 @DisplayName("Tests for ideal weight (IW).")
 public class IWTest {
 
-    private final HealthCalcImpl calcu = new HealthCalcImpl();
+    private final HealthCalcImpl calcu = HealthCalcImpl.getInstance();
 
     ///////////////////////////////////////////////////////////////////////////
     // idealWeight() test
