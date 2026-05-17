@@ -547,3 +547,10 @@ La clase `HealthHospitalStatsDecorator` envuelve una instancia de `HealthHospita
 ![Decorator](design_patterns/decorator.png)
 
 ### Patrón Strategy
+Nos permite definir diferentes versiones de la calculadora (europea y americana) y gestionar varios idiomas de forma intercambiable. Al encapsular cada lógica en una estrategia específica, el sistema puede cambiar su comportamiento en tiempo de ejecución sin modificar el código original, cumpliendo con el principio Open/Closed y reutilizando la instancia única del Singleton.
+![Strategy](design_patterns/strategy.png)
+
+### Diagrama Global Combinado
+El siguiente diagrama ilustra la arquitectura global de la aplicación, mostrando cómo los diferentes patrones de diseño (Singleton, Adapter, Decorator y Strategy) interactúan entre sí y son orquestados a través de la clase `Main`.
+
+![Diagrama Global](design_patterns/diagrama_global.png)

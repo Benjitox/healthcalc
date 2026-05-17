@@ -7,6 +7,7 @@ import healthcalc.hospital.HealthHospital;
 import healthcalc.hospital.HealthHospitalAdapter;
 import healthcalc.hospital.HealthHospitalStatsDecorator;
 import healthcalc.hospital.ResultadoIMC;
+import healthcalc.strategy.*;
 
 public class Main {
 
@@ -94,6 +95,24 @@ public class Main {
             System.out.println("Número total de pacientes: " + hospitalConStats.numTotalPacientes());
 
             System.out.println("================================");
+            System.out.println("\n=== Prueba patrón Strategy ===");
+            healthcalc.strategy.HealthContext context = new healthcalc.strategy.HealthContext();
+
+            // 1. Versión Europea en Español (Metros y gramos)
+            System.out.println("[Configurando Estrategia Europea - Idioma: ES]");
+            context.setStrategy(new healthcalc.strategy.EuropeanStrategy());
+            // Usamos gramos (weight * 1000)
+            context.executeStrategy(heightMeters, weight * 1000, "es");
+
+            // 2. Versión Americana en inglés (Pies y libras)
+            // Ejemplo: 1.80m son ~5.91 pies | 75kg son ~165.35 lbs
+            System.out.println("\n[Configurando Estrategia Americana - Idioma: EN]");
+            context.setStrategy(new healthcalc.strategy.AmericanStrategy());
+            double heightFeet = heightMeters * 3.28084;
+            double weightLbs = weight * 2.20462;
+            context.executeStrategy(heightFeet, weightLbs, "en");
+
+            System.out.println("=============================================================");
 
         } catch (InvalidHealthDataException e) {
             System.err.println("\n[ERROR DE DATOS]: " + e.getMessage());
