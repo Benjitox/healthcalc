@@ -181,3 +181,35 @@ El método antiguo se mantiene para conservar la compatibilidad con la implement
 Número de cambios manuales realizados
 
 1 método añadido en la interfaz HealthCalc y 1 método añadido en HealthCalcImpl.
+
+
+========================================
+REFACTORING 7
+========================================
+
+Bad smell / problema detectado
+
+Large Interface / Divergent Change.
+La interfaz principal tenía muchas responsabilidades de métricas de salud distintas.
+
+
+Refactoring aplicado
+
+Extraer interfaz.
+
+
+Tipo
+
+Refactorización de clases.
+
+
+Descripción del cambio realizado
+
+Se ha creado la interfaz BasalMetabolicIndex para separar la
+responsabilidad relacionada con el cálculo y clasificación del BMI.
+HealthCalcImpl implementa ahora esta nueva interfaz.
+
+
+Número de cambios manuales realizados
+
+1 interfaz creada y 1 modificación en HealthCalcImpl.

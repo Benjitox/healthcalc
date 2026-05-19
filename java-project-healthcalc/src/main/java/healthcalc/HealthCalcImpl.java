@@ -2,7 +2,8 @@ package healthcalc;
 
 import healthcalc.exceptions.InvalidHealthDataException;
 
-public class HealthCalcImpl implements HealthCalc {
+public class HealthCalcImpl
+        implements HealthCalc, BasalMetabolicIndex {
 
     private static HealthCalcImpl instance;
 
