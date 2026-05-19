@@ -83,3 +83,38 @@ clase HealthPerson como implementación concreta de dicha interfaz.
 Número de cambios manuales realizados
 
 1 interfaz creada (Person.java) y 1 clase creada (HealthPerson.java).
+
+
+========================================
+REFACTORING 4
+========================================
+
+Bad smell / problema detectado
+
+Long Parameter List / Data Clumps.
+El cálculo del BMI recibía peso y altura como parámetros,
+aunque ambos datos son de la misma persona.
+
+
+Refactoring aplicado
+
+Introducir objeto parámetro.
+
+
+Tipo
+
+Refactorización de métodos.
+
+
+Descripción del cambio realizado
+
+Se ha añadido una nueva versión del método bmi que recibe un objeto Person.
+El método antiguo se mantiene para conservar la compatibilidad con el código
+existente.
+
+
+
+Número de cambios manuales realizados
+
+1 método añadido en la interfaz HealthCalc y 1 método añadido en HealthCalcImpl.
+
