@@ -90,4 +90,6 @@ public double vai(String sex, double bmi, double cc, double tg, double hdl) thro
     public double basalMetabolicRate(double weightKg, double heightCm, int ageYears, String sex) throws InvalidHealthDataException;
 
     double bmi(Person person) throws InvalidHealthDataException;
+    public BMICategory category(Person person) throws InvalidHealthDataException;
 }
+

@@ -150,4 +150,27 @@ public class HealthCalcImpl implements HealthCalc {
         return bmi(person.weight(), person.height());
     }
 
+    @Override
+    public BMICategory category(Person person) throws InvalidHealthDataException {
+        double bmi = bmi(person);
+
+        if (bmi < 16) {
+            return BMICategory.SEVERE_THINNESS;
+        } else if (bmi < 17) {
+            return BMICategory.MODERATE_THINNESS;
+        } else if (bmi < 18.5) {
+            return BMICategory.MILD_THINNESS;
+        } else if (bmi < 25) {
+            return BMICategory.NORMAL_WEIGHT;
+        } else if (bmi < 30) {
+            return BMICategory.OVERWEIGHT;
+        } else if (bmi < 35) {
+            return BMICategory.OBESE_CLASS_I;
+        } else if (bmi < 40) {
+            return BMICategory.OBESE_CLASS_II;
+        } else {
+            return BMICategory.OBESE_CLASS_III;
+        }
+    }
+
 }
