@@ -1,0 +1,21 @@
+PRÁCTICA 7 - REFACTORINGS
+
+========================================
+REFACTORING 1
+========================================
+
+Bad smell / problema detectado
+Primitive Obsession / Type Code. El sexo de la persona se representa actualmente mediante cadenas de texto ("m" y "f"), lo que puede producir errores y reduce la claridad del código.
+
+Refactoring aplicado
+Replace Type Code with Enum / Extract Class.
+
+Tipo
+Class Refactoring.
+
+Descripción del cambio realizado
+Se ha creado el enumerado Gender con los valores MALE y FEMALE.
+
+Número de cambios manuales realizados
+1 clase creada (Gender.java).
+
