@@ -51,3 +51,35 @@ del índice de masa corporal.
 Número de cambios manuales realizados
 
 1 clase creada (BMICategory.java).
+
+=========================================
+REFACTORING 3
+========================================
+
+Bad smell / problema detectado
+
+Long Parameter List / Data Clumps.
+Los datos relacionados con una persona, como peso, altura, sexo y edad,
+se pasan como parámetros independientes en distontos métodos.
+
+
+Refactoring aplicado
+
+Introducir objeto parámetro / Extraer interfaz / Extraer clase.
+
+
+Tipo
+
+Refactorización de clases.
+
+
+Descripción del cambio realizado
+
+Se ha creado la interfaz Person para representar los datos básicos de una
+persona según el esquema propuesto en la práctica. Además, se ha creado la
+clase HealthPerson como implementación concreta de dicha interfaz.
+
+
+Número de cambios manuales realizados
+
+1 interfaz creada (Person.java) y 1 clase creada (HealthPerson.java).
