@@ -207,9 +207,11 @@ Descripción del cambio realizado
 
 Se ha creado la interfaz BasalMetabolicIndex para separar la
 responsabilidad relacionada con el cálculo y clasificación del BMI.
-HealthCalcImpl implementa ahora esta nueva interfaz.
+HealthCalcImpl implementa ahora esta nueva interfaz.También se han añadido junit test para validar el uso
+de Person y BMICategory en los nuevos métodos refactorizados.
 
 
 Número de cambios manuales realizados
 
-1 interfaz creada y 1 modificación en HealthCalcImpl.
+1 interfaz creada,1 modificación en HealthCalcImpl.
+2 test añadidos.
