@@ -173,4 +173,9 @@ public class HealthCalcImpl implements HealthCalc {
         }
     }
 
+    @Override
+    public double idealWeight(Person person) throws InvalidHealthDataException {
+        return idealWeight(person.height() * 100, person.gender() == Gender.MALE ? "m" : "f");
+    }
+
 }

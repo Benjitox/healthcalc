@@ -148,3 +148,36 @@ Se ha añadido el método category(Person) para devolver la clasificación BMI c
 Número de cambios manuales realizados
 
 1 método añadido en la interfaz HealthCalc y 1 método añadido en HealthCalcImpl.
+
+
+
+========================================
+REFACTORING 6
+========================================
+
+Bad smell / problema detectado
+
+Long Parameter List / Data Clumps.
+El cálculo del peso ideal recibía altura y sexo como parámetros independientes,
+aunque ambos son de una sola persona.
+
+
+Refactoring aplicado
+
+Introducir objeto parámetro.
+
+
+Tipo
+
+Refactorización de métodos.
+
+
+Descripción del cambio realizado
+
+Se ha añadido una nueva versión del método idealWeight que recibe un objeto Person.
+El método antiguo se mantiene para conservar la compatibilidad con la implementaciónactual.
+
+
+Número de cambios manuales realizados
+
+1 método añadido en la interfaz HealthCalc y 1 método añadido en HealthCalcImpl.
