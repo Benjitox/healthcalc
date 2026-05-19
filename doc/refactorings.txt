@@ -5,7 +5,9 @@ REFACTORING 1
 ========================================
 
 Bad smell / problema detectado
-Primitive Obsession / Type Code. El sexo de la persona se representa actualmente mediante cadenas de texto ("m" y "f"), lo que puede producir errores y reduce la claridad del código.
+Primitive Obsession / Type Code. 
+El sexo de la persona se representa con chars (m y f), 
+esto puede producir errores y reduce la claridad del código.
 
 Refactoring aplicado
 Replace Type Code with Enum / Extract Class.
@@ -19,3 +21,33 @@ Se ha creado el enumerado Gender con los valores MALE y FEMALE.
 Número de cambios manuales realizados
 1 clase creada (Gender.java).
 
+=========================================
+REFACTORING 2
+========================================
+
+Bad smell / problema detectado
+
+Primitive Obsession / Type Code.
+Las categorías del índice BMI se representan actualmente mediante cadenas de texto,
+lo que puede producir errores y reduce la claridad del código.
+
+
+Refactoring aplicado
+
+Reemplazar código de tipo por enumerado / Extraer clase.
+
+
+Tipo
+
+Refactorización de clases.
+
+
+Descripción del cambio realizado
+
+Se ha creado el enum BMICategory con las distintas clasificaciones
+del índice de masa corporal.
+
+
+Número de cambios manuales realizados
+
+1 clase creada (BMICategory.java).
