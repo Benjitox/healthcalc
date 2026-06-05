@@ -550,3 +550,35 @@ A continuación se muestran las capturas de la ejecución exitosa de todos los t
 
 **4. Resumen final (Build Success):**
 ![Resumen de ejecución](doc/P3/bdd_summary.png)
+
+
+## Patrones de diseño
+
+### Patrón Singleton
+
+Nos permite garantizar que solo hay una única instancia de la calculadora que sirve como acceso global.
+
+![Singleton](design_patterns/singleton.png)
+
+### Patrón Adapter
+
+Hemos creado un adaptador para poder trabajar con datos en las unidades especificadas por el hospital (y también el formato de respuesta esperado) sin tener que reimplementar nuestra calculadora al completo. Para la respuesta del BMI hemos incluido una clase que hace las veces de tupla, combinando el resultado numérico del cálculo y su clasificación asociada. Todo basandonos en el contrato proporcionado por el hospital.
+
+![Adapter](design_patterns/adapter.png)
+
+### Patrón Decorator
+
+El patrón Decorator permite agregar funcionalidades adicionales a objetos en tiempo de ejecución de manera dinámica, sin modificar su estructura original. En nuestro caso, hemos implementado `HealthHospitalStatsDecorator` para añadir la capacidad de recopilar estadísticas sobre los pacientes (altura media, peso media, IMC medio, etc.) mientras se mantienen todas las funcionalidades del adaptador original.
+
+La clase `HealthHospitalStatsDecorator` envuelve una instancia de `HealthHospital` y registra las estadísticas cada vez que se invoca un método, proporcionando una interfaz adicional `HealthStats` que expone métodos para acceder a estas métricas agregadas.
+
+![Decorator](design_patterns/decorator.png)
+
+### Patrón Strategy
+Nos permite definir diferentes versiones de la calculadora (europea y americana) y gestionar varios idiomas de forma intercambiable. Al encapsular cada lógica en una estrategia específica, el sistema puede cambiar su comportamiento en tiempo de ejecución sin modificar el código original, cumpliendo con el principio Open/Closed y reutilizando la instancia única del Singleton.
+![Strategy](design_patterns/strategy.png)
+
+### Diagrama Global Combinado
+El siguiente diagrama ilustra la arquitectura global de la aplicación, mostrando cómo los diferentes patrones de diseño (Singleton, Adapter, Decorator y Strategy) interactúan entre sí y son orquestados a través de la clase `Main`.
+
+![Diagrama Global](design_patterns/diagrama_global.png)

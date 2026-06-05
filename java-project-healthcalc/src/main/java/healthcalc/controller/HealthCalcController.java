@@ -4,17 +4,17 @@ import java.awt.Color;
 
 import healthcalc.HealthCalcImpl;
 import healthcalc.exceptions.InvalidHealthDataException;
+import healthcalc.vista.HealthCalcView;
 import healthcalc.vista.HealthCalcVista;
 
 public class HealthCalcController {
 
-    private final HealthCalcVista view;
+    private final HealthCalcView view;
     private final HealthCalcImpl model;
 
-    public HealthCalcController(HealthCalcVista view) {
+    public HealthCalcController(HealthCalcView view) {
         this.view = view;
-        this.model = new HealthCalcImpl();
-
+        this.model = HealthCalcImpl.getInstance();
         initController();
     }
 

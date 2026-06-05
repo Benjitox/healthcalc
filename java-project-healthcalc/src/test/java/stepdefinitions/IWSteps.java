@@ -10,7 +10,7 @@ import io.cucumber.java.es.Entonces;
 
 public class IWSteps {
 
-    private HealthCalcImpl calculadora = new HealthCalcImpl();
+    private HealthCalcImpl calculadora = HealthCalcImpl.getInstance();
 
     public static double altura;
     public static String sexo;
