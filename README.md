@@ -582,3 +582,18 @@ Nos permite definir diferentes versiones de la calculadora (europea y americana)
 El siguiente diagrama ilustra la arquitectura global de la aplicación, mostrando cómo los diferentes patrones de diseño (Singleton, Adapter, Decorator y Strategy) interactúan entre sí y son orquestados a través de la clase `Main`.
 
 ![Diagrama Global](design_patterns/diagrama_global.png)
+
+## Practica 8: Nuevo Proyecto HealthCalc
+
+En esta practica se ha gestionado el proyecto en GitHub Projects usando un tablero Kanban con tareas convertidas en Issues, incluyendo metadatos de priorizacion, dificultad, esfuerzo y planificacion por ciclos.
+
+### Captura del tablero Kanban y vista Gantt
+
+![Tablero Kanban y vista Gantt del Proyecto HealthCalc](doc/P8/kanban_gantt.png)
+
+### Tareas asignadas (Web)
+
+- Crear vista web para calculo BMI.
+- Crear vista web para calculo BMR.
+- Implementar controlador web para calculo de BMI.
+- Implementar controlador web para calculo de BMR.
