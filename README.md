@@ -539,9 +539,15 @@ El siguiente diagrama ilustra la arquitectura global de la aplicación, mostrand
 
 En esta practica se ha gestionado el proyecto en GitHub Projects usando un tablero Kanban con tareas convertidas en Issues, incluyendo metadatos de priorizacion, dificultad, esfuerzo y planificacion por ciclos.
 
-### Captura del tablero Kanban y vista Gantt
+## Práctica 8: Nuevo Proyecto HealthCalc
 
-![Tablero Kanban y vista Gantt del Proyecto HealthCalc](doc/P8/kanban_gantt.png)
+### Captura del tablero Kanban
+
+![Tablero Kanban del Proyecto HealthCalc](./doc/P8/kanban_gantt.png)
+
+### Vista Gantt / Roadmap
+
+![Vista Gantt del Proyecto HealthCalc](./doc/P8/Gantt_roadmap.PNG)
 
 ### Tareas asignadas (Web)
 
