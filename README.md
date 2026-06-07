@@ -545,7 +545,30 @@ En esta practica se ha gestionado el proyecto en GitHub Projects usando un table
 
 ### Tareas asignadas (Web)
 
-- Crear vista web para calculo BMI.
-- Crear vista web para calculo BMR.
-- Implementar controlador web para calculo de BMI.
-- Implementar controlador web para calculo de BMR.
+**Tareas de Benjamín Cortés Fernández:**
+- Crear vista web para cálculo de BMI (#131)
+- Crear vista web para cálculo de BMR (#134)
+- Implementar controlador web para cálculo de BMI (#137)
+- Implementar controlador web para cálculo de BMR (#140)
+- Preparar release HealthCalc v1.0.0 (#143)
+- Definir historia de usuario para cálculo de IBW (#125)
+- Realizar boceto de la interfaz web (#128)
+
+**Tareas de Javier González López:**
+- Implementar controlador web para cálculo de VAI (#139)
+- Actualizar documentación del proyecto (#142)
+- Adaptar validaciones de datos a la interfaz web (#136)
+- Crear vista web para cálculo de VAI (#133)
+- Definir arquitectura MVC para la aplicación web (#130)
+- Definir historia de usuario para cálculo de BMI (#124)
+- Definir historia de usuario para cálculo de BMR (#127)
+
+
+**Tareas de Luis Parrado Navarro:**
+- Añadir pruebas para la versión web de HealthCalc (#141)
+- Reutilizar lógica de HealthCalcImpl (#135)
+- Implementar controlador web para cálculo de IBW (#138)
+- Diseñar estructura de navegación de la aplicación web (#129)
+- Crear vista web para cálculo de IBW (#132)
+- Definir historia de usuario para cálculo de VAI (#126)
+
