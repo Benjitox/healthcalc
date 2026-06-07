@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useLocale(Locale.getDefault());
-        HealthCalc healthCalc = HealthCalcImpl.getInstance();
+        HealthCalc healthCalc = new HealthCalcImpl();
 
         try {
             System.out.println("==========================================");
@@ -30,7 +30,7 @@ public class Main {
 
             System.out.print("> Introduce la altura en metros (ej. 1,75): ");
             double heightMeters = scanner.nextDouble();
-            double heightCm = heightMeters * 100;
+            double heightCm = heightMeters * 100; 
 
             System.out.println("\n--- Datos adicionales para el Índice de Adiposidad Visceral (VAI) ---");
             System.out.print("> Introduce la circunferencia de la cintura en cm: ");
@@ -47,7 +47,7 @@ public class Main {
 
             double bmi = healthCalc.bmi(weight, heightMeters);
             String classification = healthCalc.bmiClassification(bmi);
-            double ibw = healthCalc.idealWeight(heightCm, sex);
+            double ibw = healthCalc.idealWeight(heightCm, sex); 
             double vai = healthCalc.vai(sex, bmi, cc, tg, hdl);
             double bmr = healthCalc.basalMetabolicRate(weight, heightCm, age, sex);
 

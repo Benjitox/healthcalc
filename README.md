@@ -5,22 +5,6 @@ El [Hospital Universitario Virgen de la Victoria (El Clínico)](https://www.sspa
 
 ![MOdelo de características de la calculadora de salud.](resources/images/healthcalc_fm.png)
 
-## Interfaz de Usuario
-
-A continuación se muestra el boceto de diseño de la interfaz gráfica de la **Calculadora de Salud**, que ilustra la disposición y organización de los componentes de la aplicación:
-
-![Boceto de la Calculadora de Salud - HealthCalc](doc/P4/boceto.PNG)
-
-**Descripción del boceto:** La interfaz está organizada en una ventana principal con tres pestañas (`JTabbedPane`) que permiten acceder a cada uno de los cálculos disponibles:
-
-1. **Pestaña "Calcular BMI"**: Contiene campos de entrada para peso (kg) y altura (cm), un botón para ejecutar el cálculo, y etiquetas de resultado que muestran tanto el valor numérico del IMC como su clasificación clínica (Normal, Sobrepeso, Obesidad, etc.) con código de colores para facilitar la interpretación visual.
-
-2. **Pestaña "Calcular IBW"**: Permite ingresar la altura en centímetros y seleccionar el sexo del paciente (Hombre/Mujer) mediante un selector, botón de cálculo y resultado del peso corporal ideal según la fórmula de Lorentz.
-
-3. **Pestaña "Calcular VAI"**: Requiere múltiples métricas (IMC, circunferencia de cintura, triglicéridos, HDL) y sexo del paciente para calcular el Índice de Adiposidad Visceral, proporcionando un indicador de riesgo cardiometabólico.
-
-La interfaz utiliza un diseño limpio y funcional con layouts en `GridBag` y `FormLayout` para una distribución óptima de componentes, facilitando la interacción y legibilidad de los resultados clínicos.
-
 ## Requisitos  
 
 <details>
@@ -115,8 +99,7 @@ Para que el proyecto cumpla con estándares de software médico, se deben inclui
 
 * **M4: Perímetro Abdominal (PA) o _Waist Circumference_ (WC):** Es la medición lineal de la circunferencia de la cintura. Se considera el indicador clínico directo de grasa visceral más sencillo y aceptado para predecir obesidad abdominal.
   
-    * **Valores de Referencia (Riesgo Elevado):**  
-      - **Hombres:** $\ge 94\text{ - }102 \text{ cm}$  
+    * **Valores de Referencia (Riesgo Elevado):** - **Hombres:** $\ge 94\text{ - }102 \text{ cm}$  
       - **Mujeres:** $\ge 80\text{ - }88 \text{ cm}$
 
 ---
@@ -124,8 +107,7 @@ Para que el proyecto cumpla con estándares de software médico, se deben inclui
 * **M5: Índice de Cintura-Cadera (ICC) o _Waist-to-Hip Ratio_ (WHR):** Es ICC la relación entre el perímetro de la cintura y el de la cadera. Se utiliza para identificar la distribución de la grasa (cuerpo tipo "manzana" o "pera") y estimar el riesgo de enfermedades cardiovasculares.
   
     * **Fórmula:** $ICC = \frac{\text{Circunferencia de cintura (cm)}}{\text{Circunferencia de cadera (cm)}}$
-    * **Valores de Riesgo (OMS):**  
-        - **Hombres:** $> 0.90$  
+    * **Valores de Riesgo (OMS):** - **Hombres:** $> 0.90$  
         - **Mujeres:** $> 0.85$
 
     Tipos de Morfología:
@@ -159,14 +141,14 @@ Para que el proyecto cumpla con estándares de software médico, se deben inclui
     1. **Ecuación de Mifflin-St Jeor**
     Es actualmente la más precisa para la población general y la que utilizan la mayoría de calculadoras modernas. 
 
-        - **Hombres:**  `TMB = (10 × peso en kg) + (6.25 × altura en cm) - (5 × edad en años) + 5`
-        - **Mujeres:**  `TMB = (10 × peso en kg) + (6.25 × altura en cm) - (5 × edad en años) - 161`
+        - **Hombres:** `TMB = (10 × peso en kg) + (6.25 × altura en cm) - (5 × edad en años) + 5`
+        - **Mujeres:** `TMB = (10 × peso en kg) + (6.25 × altura en cm) - (5 × edad en años) - 161`
 
     2. **Ecuación de Harris-Benedict (revisada)**
     Es el método clásico. La versión original de 1919 fue revisada en 1984 por Roza y Shizgal para mejorar su exactitud.
 
-        - **Hombres:**  `TMB = 88.362 + (13.397 × peso en kg) + (4.799 × altura en cm) - (5.677 × edad en años)`
-        - **Mujeres:**  `TMB = 447.593 + (9.247 × peso en kg) + (3.098 × altura en cm) - (4.330 × edad en años)`
+        - **Hombres:** `TMB = 88.362 + (13.397 × peso en kg) + (4.799 × altura en cm) - (5.677 × edad en años)`
+        - **Mujeres:** `TMB = 447.593 + (9.247 × peso en kg) + (3.098 × altura en cm) - (4.330 × edad en años)`
 
     3. **Ecuación de Katch-McArdle**
     A diferencia de las anteriores, esta fórmula no distingue entre sexos, sino que utiliza la Masa Corporal Magra (peso sin grasa). Es ideal si conoces tu porcentaje de grasa corporal.
@@ -210,8 +192,7 @@ Estas métricas requieren datos de signos vitales o resultados de laboratorio.
 
 * **M9: Índice de Adiposidad Visceral (VAI) o _Visceral Adiposity Index_ (VAI):** Es un indicador empírico que estima la función del tejido adiposo visceral y el riesgo cardiometabólico. Combina medidas físicas (IMC y CC) con parámetros lipídicos (Triglicéridos y HDL).
   
-    **Fórmulas:**  
-        - **Hombres:** $VAI = \left( \frac{CC}{39.68 + (1.88 \times IMC)} \right) \times \left( \frac{TG}{1.03} \right) \times \left( \frac{1.31}{HDL} \right)$  
+    **Fórmulas:** - **Hombres:** $VAI = \left( \frac{CC}{39.68 + (1.88 \times IMC)} \right) \times \left( \frac{TG}{1.03} \right) \times \left( \frac{1.31}{HDL} \right)$  
         - **Mujeres:** $VAI = \left( \frac{CC}{36.58 + (1.89 \times IMC)} \right) \times \left( \frac{TG}{0.81} \right) \times \left( \frac{1.52}{HDL} \right)$  
     *(Donde CC = Circunferencia de Cintura en cm, TG = Triglicéridos y HDL en mmol/L)*.
 
@@ -219,8 +200,7 @@ Estas métricas requieren datos de signos vitales o resultados de laboratorio.
 
 * **M10: Tasa de Filtración Glomerular Estimada (eGFR) o _Estimated Glomerular Filtration Rate_ (eGFR):** Es el "estándar de oro" para evaluar qué tan bien están filtrando la sangre los riñones. Es vital para la detección de la Enfermedad Renal Crónica (ERC) y para ajustar dosis de fármacos.
   
-    **Fórmulas Comunes:**  
-      * **Cockcroft-Gault (Clásica):** $\frac{(140 - \text{edad}) \times \text{peso}}{72 \times \text{creatinina}} \times (0.85 \text{ si es mujer})$.  
+    **Fórmulas Comunes:** * **Cockcroft-Gault (Clásica):** $\frac{(140 - \text{edad}) \times \text{peso}}{72 \times \text{creatinina}} \times (0.85 \text{ si es mujer})$.  
       * **CKD-EPI (Moderna):** Utiliza logaritmos y variables de raza/sexo para mayor precisión (es la recomendada actualmente en software clínico).  
     * **Entradas necesarias:** Creatinina sérica (mg/dL), edad, sexo y etnia.  
 
@@ -299,8 +279,7 @@ Para garantizar que la calculadora sea fiable y segura, se han definido los sigu
 
 * **Pruebas de valores intermedios:** Se comprueba el comportamiento con valores representativos dentro del interior de cada intervalo para asegurar la estabilidad de la clasificación.
 
-* **Protección ante datos inválidos:**  
-    * El sistema debe rechazar valores de IMC negativos.  
+* **Protección ante datos inválidos:** * El sistema debe rechazar valores de IMC negativos.  
     * El sistema debe rechazar valores de IMC nulos (igual a 0).  
     * El sistema debe rechazar valores de IMC clínicamente incoherentes o absurdamente altos (por ejemplo, superiores a 150).
 
@@ -374,41 +353,42 @@ Para garantizar que la calculadora sea fiable y segura, se han definido los sigu
 
 </details>
 
-<details>
-<summary><b>Ejecutable JAR (Recomendado)</b></summary>
-
-### Requisito
-- Java Runtime Environment (JRE) 18 o superior instalado en el sistema
-
-### Ejecución del fichero JAR
-El fichero ejecutable `HealthCalc.jar` se encuentra en la **raíz del repositorio** y puede ser ejecutado de dos formas:
-
-1. **Doble clic directo:** 
-   - En sistemas operativos con GUI (Windows, macOS, Linux con entorno gráfico), simplemente haz doble clic sobre el fichero `HealthCalc.jar` para lanzar la aplicación.
-
-2. **Terminal (Línea de comandos):**
-   ```bash
-   java -jar HealthCalc.jar
-   ```
-
-Esta es la forma más rápida y conveniente de ejecutar la aplicación, ya que no requiere compilación ni herramientas adicionales, únicamente Java instalado.
-
-</details>
-
 ---
 
-## Resultados de pruebas, BDD y cobertura
+## Resultados de Pruebas y Cobertura (Práctica 1)
 
-Siguiendo la metodología TDD y el patrón **AAA (Arrange, Act, Assert)**, el proyecto combina pruebas unitarias (JUnit 5) y pruebas funcionales BDD (Cucumber).
+Siguiendo la metodología de Desarrollo Dirigido por Tests TDD y el patrón **AAA (Arrange, Act, Assert)**, el proyecto combina pruebas unitarias (JUnit 5) y pruebas funcionales BDD (Cucumber).
 
-### Tipos de test implementados
+### Ejecución de Tests
+Se han ejecutado un total de 73 tests exitosamente, cubriendo las métricas de BMI, IBW y VAI.
+![Resultado de la ejecución de los tests](resources/p1/tests.png)
 
-1. **Pruebas unitarias (JUnit 5)**
-    - Verifican el cálculo matemático de cada métrica.
-    - Verifican validaciones de entrada (rangos, negativos, cero, sexo inválido, límites biológicos).
-    - Incluyen pruebas de frontera y casos representativos.
+### Informe de Cobertura
+Se ha logrado una cobertura de código del 100%, tal como se muestra en el informe generado por Jacoco:
+![Informe de cobertura al 100%](resources/p1/cobertura.png)
 
-2. **Pruebas BDD (Cucumber + Gherkin en español)**
+## Especificación
+
+### Casos de uso
+
+
+A continuación se presenta el diagrama de Casos de Uso del sistema **HealthCalc**.
+
+- 🔵 **Azul:** Casos de uso implementados en la **Práctica 1**.
+- 🟠 **Naranja:** Funcionalidades futuras de la calculadora que aún no están implementadas.
+- 🟣 **Morado:** Nuevo caso de uso añadido en la **Práctica 2**.
+
+![Diagrama de Casos de Uso](./doc/HealthCalc.jpg)
+
+#### Especificaciones de los casos de uso implementados en la Práctica 1
+
+Puede consultar el detalle de los casos de uso implementados en los siguientes enlaces:
+
+* [Caso de Uso: Calcular IMC (CU-01)](./doc/CU-01.txt)
+* [Caso de Uso: Calcular IBW (CU-02)](./doc/CU-02.txt)
+* [Caso de Uso: Calcular VAI (CU-03)](./doc/CU-03.txt)
+
+### Pruebas BDD (Cucumber + Gherkin en español)
 El uso de BDD permite validar el comportamiento del sistema desde el punto de vista del usuario final, asegurando que las funcionalidades implementadas cumplen con los requisitos definidos.
     - Definen comportamiento funcional desde escenarios de usuario.
     - Se ejecutan con `RunCucumberTest` y recorren los tres ficheros:
@@ -418,7 +398,7 @@ El uso de BDD permite validar el comportamiento del sistema desde el punto de vi
     - Generan informe HTML de ejecución en:
       - `java-project-healthcalc/target/reporte.html`
 
-3. **Cobertura de código (JaCoCo)**
+### Cobertura de código (JaCoCo)
     - Se ejecuta automáticamente al lanzar `mvn test`.
     - Informe HTML disponible en:
       - `java-project-healthcalc/target/site/jacoco/index.html`
@@ -554,3 +534,41 @@ Nos permite definir diferentes versiones de la calculadora (europea y americana)
 El siguiente diagrama ilustra la arquitectura global de la aplicación, mostrando cómo los diferentes patrones de diseño (Singleton, Adapter, Decorator y Strategy) interactúan entre sí y son orquestados a través de la clase `Main`.
 
 ![Diagrama Global](design_patterns/diagrama_global.png)
+
+## Practica 8: Nuevo Proyecto HealthCalc
+
+En esta practica se ha gestionado el proyecto en GitHub Projects usando un tablero Kanban con tareas convertidas en Issues, incluyendo metadatos de priorizacion, dificultad, esfuerzo y planificacion por ciclos.
+
+### Captura del tablero Kanban y vista Gantt
+
+![Tablero Kanban y vista Gantt del Proyecto HealthCalc](doc/P8/kanban_gantt.png)
+
+### Tareas asignadas (Web)
+
+**Tareas de Benjamín Cortés Fernández:**
+- Crear vista web para cálculo de BMI (#131)
+- Crear vista web para cálculo de BMR (#134)
+- Implementar controlador web para cálculo de BMI (#137)
+- Implementar controlador web para cálculo de BMR (#140)
+- Preparar release HealthCalc v1.0.0 (#143)
+- Definir historia de usuario para cálculo de IBW (#125)
+- Realizar boceto de la interfaz web (#128)
+
+**Tareas de Javier González López:**
+- Implementar controlador web para cálculo de VAI (#139)
+- Actualizar documentación del proyecto (#142)
+- Adaptar validaciones de datos a la interfaz web (#136)
+- Crear vista web para cálculo de VAI (#133)
+- Definir arquitectura MVC para la aplicación web (#130)
+- Definir historia de usuario para cálculo de BMI (#124)
+- Definir historia de usuario para cálculo de BMR (#127)
+
+
+**Tareas de Luis Parrado Navarro:**
+- Añadir pruebas para la versión web de HealthCalc (#141)
+- Reutilizar lógica de HealthCalcImpl (#135)
+- Implementar controlador web para cálculo de IBW (#138)
+- Diseñar estructura de navegación de la aplicación web (#129)
+- Crear vista web para cálculo de IBW (#132)
+- Definir historia de usuario para cálculo de VAI (#126)
+
